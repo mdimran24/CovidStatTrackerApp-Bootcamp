@@ -1,0 +1,19 @@
+ion-card {
+    margin: auto;
+    margin-top: 3%;
+    height: auto;
+    width: 90%;
+    text-align: center;
+    padding-top: 1%;
+}
+
+ion-card img {
+    display: block;
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    margin:auto;
+}
+ion-title{
+    text-align: center;
+}
