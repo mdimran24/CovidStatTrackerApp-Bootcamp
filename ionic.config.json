@@ -1,0 +1,8 @@
+{
+  "name": "Covid App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "95cf8b36"
+}
