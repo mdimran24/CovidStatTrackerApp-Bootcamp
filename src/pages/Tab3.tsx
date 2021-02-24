@@ -7,13 +7,13 @@ const Tab3: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonTitle>LATEST COVID ADVICE</IonTitle>
+          <IonTitle style={{fontSize:'20px'}}>LATEST COVID ADVICE</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         
 
-        <IonCard>
+        <IonCard color="light">
           <IonCardHeader>
             <IonCardTitle>Symptoms</IonCardTitle>
           </IonCardHeader>
@@ -24,7 +24,7 @@ const Tab3: React.FC = () => {
           </IonCardContent>
         </IonCard>
         
-        <IonCard>
+        <IonCard color="light">
           <IonCardHeader>
             <IonCardTitle>What to do if you have symptoms</IonCardTitle>
           </IonCardHeader>
@@ -35,7 +35,7 @@ const Tab3: React.FC = () => {
           </IonCardContent>
         </IonCard>
 
-        <IonCard>
+        <IonCard color="light">
           <IonCardHeader>
             <IonCardTitle>Guidelines</IonCardTitle>
           </IonCardHeader>

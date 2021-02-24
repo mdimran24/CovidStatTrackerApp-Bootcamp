@@ -3,3 +3,7 @@ ion-grid ion-row ion-col{
     border-collapse: collapse;
     font-weight: bold;
 }
+
+ion-button{
+    margin: auto;
+}
