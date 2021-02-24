@@ -7,7 +7,7 @@ FIRST INSTALLATION
 - 'cd' into desired folder
 - npm install -g @ionic/cli cordova-res #Install ionic framework to work folder
 - git clone https://github.com/mdimran24/covid-app.git #Clone the Repo
-- cd Pentagon-Codecamp && npm install && ionic serve #Installs ionic to folder and starts up local server
+- cd covid-app && npm install && ionic serve #Installs ionic to folder and starts up local server
 
 START LOCAL SERVER* AFTER INSTALLATION
 
