@@ -56,6 +56,7 @@ const ApiFetch = (url: RequestInfo)=>{
           country soon.
         </IonCardContent>
         </IonCard>
+        /**Make table into cards */
         <IonGrid className="ion-text-center">
           <IonRow className="GridHead ion-text-bold">
             <IonCol>New cases</IonCol>
