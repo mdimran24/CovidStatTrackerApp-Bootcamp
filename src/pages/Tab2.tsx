@@ -55,9 +55,47 @@ const ApiFetch = (url: RequestInfo)=>{
           For now the data display is the global one.We will display the data according to chosen
           country soon.
         </IonCardContent>
+
+
         </IonCard>
-        /**Make table into cards */
-        <IonGrid className="ion-text-center">
+        <IonCard color="light">
+          <IonCardHeader>
+            <IonCardTitle color="tertiary">New cases</IonCardTitle>
+            <IonCardContent>
+              {newCase}
+            </IonCardContent>
+          </IonCardHeader>
+        </IonCard>
+
+        <IonCard color="light">
+          <IonCardHeader>
+            <IonCardTitle color="tertiary">Total cases</IonCardTitle>
+            <IonCardContent>
+              {newCase}
+            </IonCardContent>
+          </IonCardHeader>
+        </IonCard>
+
+        <IonCard color="light">
+          <IonCardHeader>
+            <IonCardTitle color="tertiary">New deaths</IonCardTitle>
+            <IonCardContent>
+              {newCase}
+            </IonCardContent>
+          </IonCardHeader>
+        </IonCard>
+
+        <IonCard color="light">
+          <IonCardHeader>
+            <IonCardTitle color="tertiary">Total deaths</IonCardTitle>
+            <IonCardContent>
+              {newCase}
+            </IonCardContent>
+          </IonCardHeader>
+        </IonCard>
+
+
+        {/* <IonGrid className="ion-text-center">
           <IonRow className="GridHead ion-text-bold">
             <IonCol>New cases</IonCol>
             <IonCol>Total cases</IonCol>
@@ -70,7 +108,7 @@ const ApiFetch = (url: RequestInfo)=>{
             <IonCol>{newDeath}</IonCol>
             <IonCol>{totalDeath}</IonCol>
           </IonRow>
-        </IonGrid>
+        </IonGrid> */}
         <IonList className="ion-text-center ion-margin-top">
         <IonButton size="default" onClick={()=>ApiFetch("https://api.covid19api.com/summary")}>
           Click here to display the data
