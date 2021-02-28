@@ -100,6 +100,7 @@ const ApiFetch = (url: RequestInfo)=>{
           Click here to display the data
           </IonButton>
           </IonList>
+          
           <IonCard color="light">
           <IonCardHeader>
             <IonCardTitle>Data</IonCardTitle>
