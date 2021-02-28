@@ -1,11 +1,14 @@
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonList, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonList, IonPage, IonRow, IonTitle, IonToolbar, IonSlide, IonSlides } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import React, {useState,useEffect} from 'react';
 import './Tab2.css';
 
 
 const Tab2: React.FC = () => {
-
+const slideOpts = {
+  initialSlide: 1,
+  speed: 400
+};
 const [newCase,setNewCase] = useState<number>(0);
 const [totalCases,setTotal] = useState<number>(0);
 const [newDeath,setNewDeath] = useState<number>(0);
@@ -39,61 +42,43 @@ const ApiFetch = (url: RequestInfo)=>{
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonTitle>Covid19 data</IonTitle>
+          <IonTitle>STATISTICS</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent fullscreen>
-        
-        <IonCard color="light">
-          <IonCardHeader>
-            <IonCardTitle color="tertiary" className= "ion-text-center ion-text-bold">Data</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-          In this tab you will be able to see the data concerning the 
-          Covid19.The data concerns the new cases, the total cases, the new deaths,
-          the total deaths, the new recovered, the total recovered and the update date.
-          For now the data display is the global one.We will display the data according to chosen
-          country soon.
-        </IonCardContent>
+   
+            <IonSlides pager={true} options={slideOpts}>
 
+      <IonSlide>
+        <div id="slide">
+        <h1>New Cases</h1>
+        <h2>{newCase}</h2>
+        </div>
+      </IonSlide>
 
-        </IonCard>
-        <IonCard color="light">
-          <IonCardHeader>
-            <IonCardTitle color="tertiary">New cases</IonCardTitle>
-            <IonCardContent>
-              {newCase}
-            </IonCardContent>
-          </IonCardHeader>
-        </IonCard>
+      <IonSlide>
+      <div id="slide">
+      <h2>Total Cases</h2>
+      <h2>{totalCases}</h2>
+      </div>
+      </IonSlide>
 
-        <IonCard color="light">
-          <IonCardHeader>
-            <IonCardTitle color="tertiary">Total cases</IonCardTitle>
-            <IonCardContent>
-              {newCase}
-            </IonCardContent>
-          </IonCardHeader>
-        </IonCard>
+      <IonSlide>
+      <div id="slide">
+        <h1>New Deaths</h1>
+        <h2>{newDeath}</h2>
+        </div>
+      </IonSlide>
 
-        <IonCard color="light">
-          <IonCardHeader>
-            <IonCardTitle color="tertiary">New deaths</IonCardTitle>
-            <IonCardContent>
-              {newCase}
-            </IonCardContent>
-          </IonCardHeader>
-        </IonCard>
-
-        <IonCard color="light">
-          <IonCardHeader>
-            <IonCardTitle color="tertiary">Total deaths</IonCardTitle>
-            <IonCardContent>
-              {newCase}
-            </IonCardContent>
-          </IonCardHeader>
-        </IonCard>
-
+      <IonSlide>
+      <div id="slide">
+        <h1>Total Deaths</h1>
+        <h2>{totalDeath}</h2>
+        </div>
+      </IonSlide>
+    </IonSlides>
+   
 
         {/* <IonGrid className="ion-text-center">
           <IonRow className="GridHead ion-text-bold">
@@ -109,11 +94,24 @@ const ApiFetch = (url: RequestInfo)=>{
             <IonCol>{totalDeath}</IonCol>
           </IonRow>
         </IonGrid> */}
+
         <IonList className="ion-text-center ion-margin-top">
         <IonButton size="default" onClick={()=>ApiFetch("https://api.covid19api.com/summary")}>
           Click here to display the data
           </IonButton>
           </IonList>
+          <IonCard color="light">
+          <IonCardHeader>
+            <IonCardTitle>Data</IonCardTitle>
+          </IonCardHeader>
+          <IonCardContent>
+          In this tab you will be able to see the data concerning 
+          the Coronavirus.The data concerns the new cases, the total cases, the new deaths,
+          the total deaths, the new recovered, the total recovered and the update date.
+          For now the data display is the global one.We will display the data according to chosen
+          country soon.
+        </IonCardContent>
+        </IonCard>
       </IonContent>
     </IonPage>
   );
