@@ -10,3 +10,8 @@ ion-grid ion-row ion-col{
 ion-button{
     margin: auto;
 }
+
+ion-slides {
+    height:40%;
+    width:100%;
+}
