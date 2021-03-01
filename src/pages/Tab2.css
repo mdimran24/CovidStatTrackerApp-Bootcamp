@@ -1,7 +1,10 @@
+
+
 ion-grid ion-row ion-col{
     border: solid black 1px;
     border-collapse: collapse;
     font-weight: bold;
+    padding: 10px 0px;
 }
 
 ion-button{
