@@ -1,0 +1,7 @@
+.my-custom-class {
+    /*Displays the popover in the middle of the screen*/
+    --width: 90%;
+    position: absolute;
+    margin: auto;
+    
+}
