@@ -20,11 +20,11 @@ const Tab3: React.FC = () => {
       <IonContent fullscreen>
 
       <br></br>
-      <IonCard color="light">
+      {/* <IonCard color="light">
           <IonCardHeader>
             <IonCardTitle>Information</IonCardTitle>
           </IonCardHeader>
-          <IonCardContent>
+          <IonCardContent> */}
 
           <IonPopover
       cssClass='my-custom-class'
@@ -52,7 +52,7 @@ const Tab3: React.FC = () => {
       Symptoms
     </IonButton>
 
-    <br></br>
+    <br></br><br></br>
 
     <IonPopover
 
@@ -78,10 +78,10 @@ const Tab3: React.FC = () => {
         setShowPopover2({ showPopover: true, event: e })
       }}
     >
-      Symptoms Response
+      What to do if you have symptoms
     </IonButton>
 
-    <br></br>
+    <br></br><br></br>
 
     <IonPopover
       cssClass='my-custom-class'
@@ -109,7 +109,7 @@ const Tab3: React.FC = () => {
       Guidelines
     </IonButton>
 
-    <br></br>
+    <br></br><br></br>
 
     <IonPopover
       cssClass='my-custom-class'
@@ -137,9 +137,10 @@ const Tab3: React.FC = () => {
     >
       Lockdown
     </IonButton>
-          </IonCardContent>
-        </IonCard>
+          {/* </IonCardContent>
+        </IonCard> */}
 
+        <br></br><br></br>
 
         <IonCard color="light">
           <IonCardHeader>
