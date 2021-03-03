@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader,IonCardContent, IonCardTitle, IonIcon, IonItem, IonLabel, IonButton, IonPopover} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader,IonCardContent, IonCardTitle, IonIcon, IonItem, IonLabel, IonButton, IonPopover, IonModal} from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab3.css';
 import React, {useState} from 'react';
@@ -8,7 +8,8 @@ const Tab3: React.FC = () => {
   const [popoverState2, setShowPopover2] = useState({ showPopover: false, event: undefined });
   const [popoverState3, setShowPopover3] = useState({ showPopover: false, event: undefined });
   const [popoverState4, setShowPopover4] = useState({ showPopover: false, event: undefined });
-
+  //Initially set to false meaning the modal is closed at the start
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <IonPage>
@@ -137,6 +138,28 @@ const Tab3: React.FC = () => {
     >
       Lockdown
     </IonButton>
+
+      <br></br><br></br>
+
+      {/* It shoes the modal button */}
+    <IonModal isOpen={showModal} cssClass='modal-class'>
+      {/* Displaying the content inside the modal */}
+      <IonCard color="secondary">
+        <IonCardHeader>
+          <IonCardTitle>Symptoms</IonCardTitle>
+        </IonCardHeader>
+        <IonCardContent>
+        A high temperature – this means you feel hot to touch on your chest or back.
+        A new, continuous cough – this means coughing a lot for more than an hour, or 3 or more coughing episodes in 24 hours.
+        A loss or change to your sense of smell or taste – this means you've noticed you cannot smell or taste anything.
+        </IonCardContent>
+      </IonCard>
+        {/* Button to close the modal */}
+        <IonButton color="secondary" onClick={() => setShowModal(false)}>Close</IonButton>
+      </IonModal>
+      {/* Button to show the modal */}
+      <IonButton color="secondary" expand="block" onClick={() => setShowModal(true)}>Symptoms</IonButton>
+
           </IonCardContent>
         </IonCard>
 
