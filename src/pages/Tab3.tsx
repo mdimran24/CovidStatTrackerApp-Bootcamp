@@ -43,7 +43,7 @@ const Tab3: React.FC = () => {
         </IonCardContent>
       </IonCard>
     </IonPopover>
-    <IonButton color="light" expand="block" onClick={
+    <IonButton color="light" shape="round" expand="block" onClick={
       (e: any) => {
         e.persist();
         setShowPopover({ showPopover: true, event: e })
