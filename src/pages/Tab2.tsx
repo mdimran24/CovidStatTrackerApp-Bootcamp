@@ -14,9 +14,9 @@ const Tab2: React.FC = () => {
 
   const slideOpts = {
     initialSlide: 0,
-    speed:400,
+    speed: 400,
     loop: true,
-    autoplay:true
+    autoplay: true
   };
   const [newCase, setNewCase] = useState<number>(0);
   const [totalCases, setTotal] = useState<number>(0);
@@ -78,7 +78,9 @@ const Tab2: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen>
+          <h1 id="title">GLOBAL STATS</h1>
         <IonSlides pager={true} options={slideOpts}>
+
 
           <IonSlide>
             <div id="slide">
@@ -115,7 +117,7 @@ const Tab2: React.FC = () => {
 
         <IonList className="ion-text-center ion-margin-top">
           <IonButton size="default" onClick={() => ApiFetch("https://api.covid19api.com/summary")}>
-            Click here to display the data
+            UPDATE DATA
           </IonButton>
         </IonList>
 
@@ -131,6 +133,8 @@ const Tab2: React.FC = () => {
             country soon.
         </IonCardContent>
         </IonCard>
+        <br></br>
+        <h2 id="title">COUNTRY STATS</h2>
         <br></br>
         <IonItem>
           <IonLabel className="ion-text-center ion-margin-top ion-margin-bottom">Select a country</IonLabel>
@@ -168,7 +172,7 @@ const Tab2: React.FC = () => {
           </IonSlide>
         </IonSlides>
         <IonList className="ion-text-center">
-          <IonButton onClick={() => updateData('https://api.covid19api.com/summary')}>Click here to display the data</IonButton>
+          <IonButton onClick={() => updateData('https://api.covid19api.com/summary')}>UPDATE DATA</IonButton>
         </IonList>
       </IonContent>
     </IonPage>
