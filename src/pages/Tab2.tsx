@@ -115,7 +115,7 @@ return (
           </IonButton>
           </IonList>
           
-          <IonCard color="light">
+          <IonCard color="primary">
           <IonCardHeader>
             <IonCardTitle>Data</IonCardTitle>
           </IonCardHeader>
