@@ -24,6 +24,7 @@ const [NewConfirmed,setNewConfirmed] = useState<number>(0);
 const [totalConfirmed,setTotalConfirmed] = useState<number>(0);
 const [Deaths,setDeaths] = useState<number>(0);
 const [totalD,setTotalD] = useState<number>(0);
+const [coutryCode,setCountryCode] = useState<string>('');
 const ApiFetch = (url: RequestInfo)=>{
   
   fetch(url)
@@ -47,10 +48,18 @@ const ApiFetch = (url: RequestInfo)=>{
       
 }
 
+window.onload=()=>{
+  var select = document.querySelector('ion-select');
+  if(select) if(!select.value==undefined){
+    console.log(select);
+  }
+}
+
 const updateData = async (url:RequestInfo)=>{ // in this function we fetch the same json data
   var response = await fetch(url);
   var {Countries} = await response.json();
   var select = document.querySelector('ion-select');
+  console.log(Countries);
   if(select) if(select.value==undefined){ // we work out the value of select and if the user didn't choose a country he will see a pop-up
     alert("please choose a country");
   }else{ // otherwhise we verify if the value is the same as the Country_Region propertie from the json data
