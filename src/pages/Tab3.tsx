@@ -20,11 +20,11 @@ const Tab3: React.FC = () => {
       <IonContent fullscreen>
 
       <br></br>
-      {/* <IonCard color="light">
+      <IonCard color="light">
           <IonCardHeader>
             <IonCardTitle>Information</IonCardTitle>
           </IonCardHeader>
-          <IonCardContent> */}
+          <IonCardContent>
 
           <IonPopover
       cssClass='my-custom-class'
@@ -32,7 +32,7 @@ const Tab3: React.FC = () => {
       isOpen={popoverState.showPopover}
       onDidDismiss={() => setShowPopover({ showPopover: false, event: undefined })}
     >
-      <IonCard color="light">
+      <IonCard color="secondary">
         <IonCardHeader>
           <IonCardTitle>Symptoms</IonCardTitle>
         </IonCardHeader>
@@ -43,7 +43,7 @@ const Tab3: React.FC = () => {
         </IonCardContent>
       </IonCard>
     </IonPopover>
-    <IonButton color="light" expand="block" onClick={
+    <IonButton color="secondary" expand="block" onClick={
       (e: any) => {
         e.persist();
         setShowPopover({ showPopover: true, event: e })
@@ -61,9 +61,9 @@ const Tab3: React.FC = () => {
       isOpen={popoverState2.showPopover}
       onDidDismiss={() => setShowPopover2({ showPopover: false, event: undefined })}
     >
-      <IonCard color="light">
+      <IonCard color="secondary">
         <IonCardHeader>
-          <IonCardTitle>What to do if you have symptoms</IonCardTitle>
+          <IonCardTitle>Response to Symptoms</IonCardTitle>
         </IonCardHeader>
         <IonCardContent>
         If you have any of the main symptoms of coronavirus:
@@ -72,13 +72,13 @@ const Tab3: React.FC = () => {
         </IonCardContent>
       </IonCard>
     </IonPopover>
-    <IonButton color="light" expand="block" onClick={
+    <IonButton color="secondary" expand="block" onClick={
       (e: any) => {
         e.persist();
         setShowPopover2({ showPopover: true, event: e })
       }}
     >
-      What to do if you have symptoms
+     Response to Symptoms
     </IonButton>
 
     <br></br><br></br>
@@ -89,7 +89,7 @@ const Tab3: React.FC = () => {
       isOpen={popoverState3.showPopover}
       onDidDismiss={() => setShowPopover3({ showPopover: false, event: undefined })}
     >
-      <IonCard color="light">
+      <IonCard color="secondary">
         <IonCardHeader>
           <IonCardTitle>Guidelines</IonCardTitle>
         </IonCardHeader>
@@ -100,7 +100,7 @@ const Tab3: React.FC = () => {
         </IonCardContent>
       </IonCard>
     </IonPopover>
-    <IonButton color="light" expand="block" onClick={
+    <IonButton color="secondary" expand="block" onClick={
       (e: any) => {
         e.persist();
         setShowPopover3({ showPopover: true, event: e })
@@ -117,7 +117,7 @@ const Tab3: React.FC = () => {
       isOpen={popoverState4.showPopover}
       onDidDismiss={() => setShowPopover4({ showPopover: false, event: undefined })}
     >
-      <IonCard color="light">
+      <IonCard color="secondary">
         <IonCardHeader>
           <IonCardTitle>Lockdown</IonCardTitle>
         </IonCardHeader>
@@ -129,7 +129,7 @@ const Tab3: React.FC = () => {
         </IonCardContent>
       </IonCard>
     </IonPopover>
-    <IonButton color="light" expand="block" onClick={
+    <IonButton color="secondary" expand="block" onClick={
       (e: any) => {
         e.persist();
         setShowPopover4({ showPopover: true, event: e })
@@ -137,8 +137,8 @@ const Tab3: React.FC = () => {
     >
       Lockdown
     </IonButton>
-          {/* </IonCardContent>
-        </IonCard> */}
+          </IonCardContent>
+        </IonCard>
 
         <br></br><br></br>
 
@@ -150,11 +150,11 @@ const Tab3: React.FC = () => {
           More information about Covid-19 and UK governments lockdown restrictions can be found below:
           <br></br>
           <br></br>
-          <IonButton color="secondary" expand="block" href="https://www.nhs.uk/conditions/coronavirus-covid-19/">UK Covid-19 Information</IonButton>
+          <IonButton color="primary" expand="block" href="https://www.nhs.uk/conditions/coronavirus-covid-19/">UK Covid-19 Information</IonButton>
           <br></br>
-          <IonButton color="secondary" expand="block" href="https://www.gov.uk/coronavirus">UK Lockdown Information</IonButton>
+          <IonButton color="primary" expand="block" href="https://www.gov.uk/coronavirus">UK Lockdown Information</IonButton>
           <br></br>
-          <IonButton color="secondary" expand="block" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">WHO advice for the public</IonButton>
+          <IonButton color="primary" expand="block" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">WHO advice for the public</IonButton>
 
           </IonCardContent>
         </IonCard>
