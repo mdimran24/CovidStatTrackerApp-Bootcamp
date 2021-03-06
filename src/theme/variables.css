@@ -3,6 +3,7 @@ http://ionicframework.com/docs/theming/ */
 
 /** Ionic CSS Variables **/
 :root {
+  /*--ion-font-family:'Montserrat', 'Calibri';*/
   /** primary **/
   --ion-color-primary: #3880FF;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -75,7 +76,10 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
-
+/*@font-face{
+  font-family:Montserrat, Verdana;
+  src: url("Montserrat.ttf")
+}*/
 @media (prefers-color-scheme: primary) {
   /*
    * Dark Colors
