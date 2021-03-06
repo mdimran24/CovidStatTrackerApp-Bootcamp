@@ -2,6 +2,6 @@
     /*Displays the popover in the middle of the screen*/
     --width: 90%;
     position: absolute;
-    margin: auto;
-    --background:light;   
+    --background:light;
+    --backdrop-opacity:0.9;
 }
