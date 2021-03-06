@@ -9,6 +9,7 @@ ion-grid ion-row ion-col{
 
 ion-button{
     margin: auto;
+    
 }
 
 ion-slides {
@@ -17,3 +18,15 @@ ion-slides {
 }
 
 
+#title{
+    text-align: center;
+}
+
+ion-label{
+    background: no-repeat 100% center;
+    background-size: 17%;
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}

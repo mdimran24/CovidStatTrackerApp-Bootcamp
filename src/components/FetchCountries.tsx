@@ -29,16 +29,11 @@ class FetchCountries extends React.Component<FetchCountriesProps,CountryDataProp
        this._isMounted=true;
         var response = await fetch(this.props.url); //the data is fetched asyncronously and stored in features property
         var {Countries} = await response.json();
-        console.log(Countries);
         this.setState({
             Data:Countries.map((countries:any,i:number)=>{ //here we assign the ion-select option value which it's gonna be the country
-            var countryCode = countries.CountryCode.toLowerCase(countries.CountryCode);
-            var imgUrl = `https://flagcdn.com/16x12/`+countryCode+`.png`;
-            //console.log(imgUrl);
                 return(
-
-                    <IonSelectOption key={i} value={countries.Country}>{countries.Country} <IonImg src={imgUrl} /> </IonSelectOption>
                     
+                    <IonSelectOption key={i} value={countries.Country}>{countries.Country} </IonSelectOption>
                 )
             }) //the map function allows us to return this for each country like a for loop
         })
