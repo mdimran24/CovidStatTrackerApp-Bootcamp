@@ -17,6 +17,16 @@ ion-slides {
     width:100%;
 }
 
+
 #title{
     text-align: center;
+}
+
+ion-label{
+    background: no-repeat 100% center;
+    background-size: 17%;
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
 }

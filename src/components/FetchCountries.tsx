@@ -1,4 +1,5 @@
-import { IonRow, IonSelectOption, IonText } from "@ionic/react";
+import { IonRow, IonSelectOption, IonText,IonImg, IonList, IonItem, IonThumbnail, IonContent } from "@ionic/react";
+import { url } from "inspector";
 import { features } from "process";
 import React, { ReactNode } from "react";
 import { isFunctionTypeNode } from "typescript";
@@ -31,7 +32,8 @@ class FetchCountries extends React.Component<FetchCountriesProps,CountryDataProp
         this.setState({
             Data:Countries.map((countries:any,i:number)=>{ //here we assign the ion-select option value which it's gonna be the country
                 return(
-                    <IonSelectOption key={i} value={countries.Country}>{countries.Country}</IonSelectOption>
+                    
+                    <IonSelectOption key={i} value={countries.Country}>{countries.Country} </IonSelectOption>
                 )
             }) //the map function allows us to return this for each country like a for loop
         })
