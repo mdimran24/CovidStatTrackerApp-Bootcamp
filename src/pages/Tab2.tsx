@@ -11,11 +11,13 @@ import { features } from 'process';
 
 const Tab2: React.FC = () => {
   // We use useSate hook to declare a variable and set it
-const slideOpts = {
-  initialSlide: 1,
-  speed: 400
-};
-
+  const slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    loop: true,
+    autoplay: true
+  };
+  
 const [newCase,setNewCase] = useState<number>(0);
 const [totalCases,setTotal] = useState<number>(0);
 const [newDeath,setNewDeath] = useState<number>(0);
