@@ -2,6 +2,16 @@
 http://ionicframework.com/docs/theming/ */
 
 /** Ionic CSS Variables **/
+
+@font-face{
+  font-family: 'JoseFin';
+  src: url('Font/JosefinSans-Italic-VariableFont_wght.ttf');
+  src: url('Font/JosefinSans-VariableFont_wght.ttf');
+}
+
+*{
+  font-family:JoseFin;
+}
 :root {
   /*--ion-font-family:'Montserrat', 'Calibri';*/
   /** primary **/
@@ -76,10 +86,7 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
-/*@font-face{
-  font-family:Montserrat, Verdana;
-  src: url("Montserrat.ttf")
-}*/
+
 @media (prefers-color-scheme: primary) {
   /*
    * Dark Colors
