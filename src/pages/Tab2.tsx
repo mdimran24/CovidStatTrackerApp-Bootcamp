@@ -9,6 +9,7 @@ import { ReactComponent } from '*.svg';
 import FetchCountries from '../components/FetchCountries';
 import { features } from 'process';
 
+
 const Tab2: React.FC = () => {
   // We use useSate hook to declare a variable and set it
 const slideOpts = {

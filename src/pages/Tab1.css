@@ -18,3 +18,7 @@ ion-title{
     text-align: center;
     font-size: 25px;
 }
+
+ion-content{
+    background-color: blue;
+}
