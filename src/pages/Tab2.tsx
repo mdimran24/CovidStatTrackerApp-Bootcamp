@@ -93,6 +93,20 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
 
       <IonContent fullscreen>
           <h1 id="title">GLOBAL STATS</h1>
+
+          <IonCard color="primary">
+          <IonCardHeader>
+            <IonCardTitle>Data</IonCardTitle>
+          </IonCardHeader>
+          <IonCardContent>
+              In this tab you will be able to see the data concerning
+              the Coronavirus.The data concerns the new cases, the total cases, the new deaths,
+              the total deaths, the new recovered, the total recovered and the update date.
+              For now the data display is the global one.We will display the data according to chosen
+              country soon.
+          </IonCardContent>
+          </IonCard>
+
         <IonSlides pager={true} options={slideOpts}>
 
 
@@ -126,27 +140,12 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
         </IonSlides>
 
 
-
-
-
         <IonList className="ion-text-center ion-margin-top">
           <IonButton size="default" onClick={() => ApiFetch("https://api.covid19api.com/summary")}>
             UPDATE DATA
           </IonButton>
         </IonList>
 
-        <IonCard color="primary">
-          <IonCardHeader>
-            <IonCardTitle>Data</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            In this tab you will be able to see the data concerning
-            the Coronavirus.The data concerns the new cases, the total cases, the new deaths,
-            the total deaths, the new recovered, the total recovered and the update date.
-            For now the data display is the global one.We will display the data according to chosen
-            country soon.
-        </IonCardContent>
-        </IonCard>
         <br></br>
         <h2 id="title">COUNTRY STATS</h2>
         <br></br>
