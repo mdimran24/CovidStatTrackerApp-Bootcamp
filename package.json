@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@capacitor/core": "2.4.6",
+    "@capacitor/android": "^2.4.7",
+    "@capacitor/core": "^2.4.7",
     "@ionic/react": "^5.5.0",
     "@ionic/react-router": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.9",
@@ -60,7 +61,7 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "2.4.6",
+    "@capacitor/cli": "^2.4.7",
     "react-scripts": "4.0.2"
   },
   "description": "An Ionic project"
