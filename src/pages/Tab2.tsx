@@ -64,7 +64,9 @@ const ApiFetch = (url: RequestInfo)=>{
 
 
   const handleSelect = async (url:RequestInfo)=>{
+    try{
     var response = await fetch(url);
+    if(response.status!=200) throw Error("An error has occured plase try again later");
     var {Countries} = await response.json();
     Countries.map((countries:any,i:number)=>{
       var label = document.querySelector('ion-label');
@@ -79,6 +81,9 @@ const ApiFetch = (url: RequestInfo)=>{
         setDeaths(countries.NewDeaths);
       }
     })
+  }catch(err){
+    setErr(err.message);
+  }
   }
 
   return (
