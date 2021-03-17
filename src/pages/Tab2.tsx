@@ -110,7 +110,7 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
           <IonCardContent>
               In this tab you will be able to see the data concerning
               the Coronavirus.The data concerns the new cases, the total cases, the new deaths,
-              the total deaths, the new recovered, the total recovered and the update date.
+              the total deaths, recovered cases, the total recovered and the update date.
           </IonCardContent>
           </IonCard>
           <h1 id="title">GLOBAL STATS</h1>
