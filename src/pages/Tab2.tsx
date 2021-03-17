@@ -27,6 +27,8 @@ const [NewConfirmed,setNewConfirmed] = useState<number>(0);
 const [totalConfirmed,setTotalConfirmed] = useState<number>(0);
 const [Deaths,setDeaths] = useState<number>(0);
 const [totalD,setTotalD] = useState<number>(0);
+const [newRecovered, setNewRecovered] = useState<number>(0);
+const [totalRecovered, setTotalRecovered] = useState<number>(0);
 const [coutryCode,setCountryCode] = useState<string>('');
 const ApiFetch = (url: RequestInfo)=>{
   
@@ -42,6 +44,8 @@ const ApiFetch = (url: RequestInfo)=>{
    setTotal(data.Global.TotalConfirmed);
    setNewDeath(data.Global.NewDeaths);
    setTotalDeath(data.Global.TotalDeaths);
+   setNewRecovered(data.Global.NewRecovered);
+   setTotalRecovered(data.Global.TotalRecovered);
     
   })
   .catch(err=>{
@@ -66,6 +70,8 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
         setTotalConfirmed(Countries[i].TotalConfirmed);
         setDeaths(Countries[i].NewDeaths);
         setTotalD(Countries[i].TotalDeaths);
+        setNewRecovered(Countries[i].NewRecovered);
+        setTotalRecovered(Countries[i].TotalRecovered);
         break;
        }
       }
@@ -138,6 +144,20 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
               <h2>{totalDeath}</h2>
             </div>
           </IonSlide>
+
+          <IonSlide>
+            <div id="slide">
+              <h1>New Recovereries</h1>
+              <h2>{newRecovered}</h2>
+            </div>
+          </IonSlide>
+
+        <IonSlide>
+            <div id="slide">
+              <h1>Total Recovereries</h1>
+              <h2>{totalRecovered}</h2>
+            </div>
+          </IonSlide>
         </IonSlides>
 
 
@@ -185,6 +205,21 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
               <h2>{totalD}</h2>
             </div>
           </IonSlide>
+
+          <IonSlide>
+            <div className="newRecovered">
+              <h1>New Recoveries</h1>
+              <h2>{newRecovered}</h2>
+            </div>
+          </IonSlide>
+
+          <IonSlide>
+            <div className="totalRecovered">
+              <h1>Total Recoveries</h1>
+              <h2>{totalRecovered}</h2>
+            </div>
+          </IonSlide>          
+
         </IonSlides>
         <IonList className="ion-text-center">
           <IonButton onClick={() => updateData('https://api.covid19api.com/summary')}>UPDATE DATA</IonButton>
