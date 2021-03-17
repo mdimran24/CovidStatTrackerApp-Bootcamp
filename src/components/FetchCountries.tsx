@@ -27,16 +27,22 @@ class FetchCountries extends React.Component<FetchCountriesProps,CountryDataProp
     
    async componentDidMount(){ //this function run the code which fetchs a json data when the component is mounted
        this._isMounted=true;
+       try{
         var response = await fetch(this.props.url); //the data is fetched asyncronously and stored in features property
+        if(response.status!=200) throw Error('an Error has occurred please try again later');
         var {Countries} = await response.json();
         this.setState({
             Data:Countries.map((countries:any,i:number)=>{ //here we assign the ion-select option value which it's gonna be the country
                 return(
                     
                     <IonSelectOption key={i} value={countries.Country}>{countries.Country} </IonSelectOption>
+                    
                 )
             }) //the map function allows us to return this for each country like a for loop
         })
+     }catch(err){
+
+     }
     }
     
    componentWillUnmount(){
