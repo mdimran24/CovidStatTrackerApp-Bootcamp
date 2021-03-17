@@ -95,7 +95,7 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
       </IonHeader>
 
       <IonContent fullscreen>
-          <h1 id="title">GLOBAL STATS</h1>
+          
 
           <IonCard color="primary">
           <IonCardHeader>
@@ -105,11 +105,9 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
               In this tab you will be able to see the data concerning
               the Coronavirus.The data concerns the new cases, the total cases, the new deaths,
               the total deaths, the new recovered, the total recovered and the update date.
-              For now the data display is the global one.We will display the data according to chosen
-              country soon.
           </IonCardContent>
           </IonCard>
-
+          <h1 id="title">GLOBAL STATS</h1>
         <IonSlides pager={true} options={slideOpts}>
 
 
