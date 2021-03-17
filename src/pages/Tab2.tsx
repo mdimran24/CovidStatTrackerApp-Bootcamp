@@ -28,6 +28,8 @@ const [NewConfirmed,setNewConfirmed] = useState<number>(0);
 const [totalConfirmed,setTotalConfirmed] = useState<number>(0);
 const [Deaths,setDeaths] = useState<number>(0);
 const [totalD,setTotalD] = useState<number>(0);
+const [newRecovered, setNewRecovered] = useState<number>(0);
+const [totalRecovered, setTotalRecovered] = useState<number>(0);
 const [coutryCode,setCountryCode] = useState<string>('');
 const [error,setError] = useState<string>('');
 const [err,setErr] = useState<string>("");
@@ -46,6 +48,8 @@ const ApiFetch = (url: RequestInfo)=>{
    setNewDeath(data.Global.NewDeaths);
    setTotalDeath(data.Global.TotalDeaths);
    
+   setNewRecovered(data.Global.NewRecovered);
+   setTotalRecovered(data.Global.TotalRecovered);
     
   })
   .catch(err=>{
@@ -104,7 +108,7 @@ const ApiFetch = (url: RequestInfo)=>{
           <IonCardContent>
               In this tab you will be able to see the data concerning
               the Coronavirus.The data concerns the new cases, the total cases, the new deaths,
-              the total deaths, the new recovered, the total recovered and the update date.
+              the total deaths, recovered cases, the total recovered and the update date.
           </IonCardContent>
           </IonCard>
           <h1 id="title">GLOBAL STATS</h1>
@@ -138,12 +142,26 @@ const ApiFetch = (url: RequestInfo)=>{
               <h2>{totalDeath}</h2>
             </div>
           </IonSlide>
+
+          <IonSlide>
+            <div id="slide">
+              <h1>New Recovereries</h1>
+              <h2>{newRecovered}</h2>
+            </div>
+          </IonSlide>
+
+        <IonSlide>
+            <div id="slide">
+              <h1>Total Recovereries</h1>
+              <h2>{totalRecovered}</h2>
+            </div>
+          </IonSlide>
         </IonSlides>
 
 
         <IonList className="ion-text-center ion-margin-top">
            
-          <div style={{margin:'auto 0px'}}>{error}</div>
+          <div style={{margin:'auto 0px',width:'80%'}}>{error}</div>
         </IonList>
 
         <br></br>
@@ -184,9 +202,24 @@ const ApiFetch = (url: RequestInfo)=>{
               <h2>{totalD}</h2>
             </div>
           </IonSlide>
+
+          <IonSlide>
+            <div className="newRecovered">
+              <h1>New Recoveries</h1>
+              <h2>{newRecovered}</h2>
+            </div>
+          </IonSlide>
+
+          <IonSlide>
+            <div className="totalRecovered">
+              <h1>Total Recoveries</h1>
+              <h2>{totalRecovered}</h2>
+            </div>
+          </IonSlide>          
+
         </IonSlides>
         <IonList className="ion-text-center">
-          <div style={{margin:'auto 0px',width:'0%'}}>{err}</div>
+          <div style={{margin:'auto 0px',width:'80%'}}>{err}</div>
         </IonList>
         
       </IonContent>
