@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonList, IonPage, IonRow, IonTitle, IonToolbar, IonSlide, IonSlides, IonLabel, IonItem, IonImg } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonList, IonPage, IonRow, IonTitle, IonToolbar, IonSlide, IonSlides, IonLabel, IonItem, IonImg, IonText, useIonViewDidEnter } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import { IonSelect, IonSelectOption } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
@@ -8,6 +8,7 @@ import { Component } from 'ionicons/dist/types/stencil-public-runtime';
 import { ReactComponent } from '*.svg';
 import FetchCountries from '../components/FetchCountries';
 import { features } from 'process';
+import { isBlock } from 'typescript';
 
 
 const Tab2: React.FC = () => {
@@ -30,11 +31,13 @@ const [totalD,setTotalD] = useState<number>(0);
 const [newRecovered, setNewRecovered] = useState<number>(0);
 const [totalRecovered, setTotalRecovered] = useState<number>(0);
 const [coutryCode,setCountryCode] = useState<string>('');
+const [error,setError] = useState<string>('');
+const [err,setErr] = useState<string>("");
 const ApiFetch = (url: RequestInfo)=>{
   
   fetch(url)
   .then(res=>{
-    if(!res.ok) throw Error("An error has occurred could not find the data");
+    if(res.status!=200) throw Error("An error has occurred please try again later");
     return res.json();
   })
   .then(data=>{
@@ -44,42 +47,30 @@ const ApiFetch = (url: RequestInfo)=>{
    setTotal(data.Global.TotalConfirmed);
    setNewDeath(data.Global.NewDeaths);
    setTotalDeath(data.Global.TotalDeaths);
+   
    setNewRecovered(data.Global.NewRecovered);
    setTotalRecovered(data.Global.TotalRecovered);
     
   })
   .catch(err=>{
-    console.log(err.message);
+    setError(err.message);
   })
 
       
 }
 
 
+  useIonViewDidEnter(()=>{
+    ApiFetch('https://api.covid19api.com/summary');
+  })
 
-const updateData = async (url:RequestInfo)=>{ // in this function we fetch the same json data
-  var response = await fetch(url);
-  var {Countries} = await response.json();
-  var select = document.querySelector('ion-select');
-  if(select) if(select.value==undefined){ // we work out the value of select and if the user didn't choose a country he will see a pop-up
-    alert("please choose a country");
-  }else{ // otherwhise we verify if the value is the same as the Country_Region propertie from the json data
-    for(var i=0;i<Countries.length;i++){ 
-      if(select.value==Countries[i].Country){
-        setNewConfirmed(Countries[i].NewConfirmed);
-        setTotalConfirmed(Countries[i].TotalConfirmed);
-        setDeaths(Countries[i].NewDeaths);
-        setTotalD(Countries[i].TotalDeaths);
-        setNewRecovered(Countries[i].NewRecovered);
-        setTotalRecovered(Countries[i].TotalRecovered);
-        break;
-       }
-      }
-    }
-  }
+
+
 
   const handleSelect = async (url:RequestInfo)=>{
+    try{
     var response = await fetch(url);
+    if(response.status!=200) throw Error("An error has occured plase try again later");
     var {Countries} = await response.json();
     Countries.map((countries:any,i:number)=>{
       var label = document.querySelector('ion-label');
@@ -88,8 +79,15 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
       var imgUrl = `https://flagcdn.com/256x192/${countryCode}.png`
       if(select&&label) if(select.value==countries.Country){
         label.style.backgroundImage=`url(${imgUrl})`;
+        setNewConfirmed(countries.NewConfirmed);
+        setTotalConfirmed(countries.TotalConfirmed);
+        setTotalD(countries.TotalDeaths);
+        setDeaths(countries.NewDeaths);
       }
     })
+  }catch(err){
+    setErr(err.message);
+  }
   }
 
   return (
@@ -162,16 +160,15 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
 
 
         <IonList className="ion-text-center ion-margin-top">
-          <IonButton size="default" onClick={() => ApiFetch("https://api.covid19api.com/summary")}>
-            UPDATE DATA
-          </IonButton>
+           
+          <div style={{margin:'auto 0px',width:'80%'}}>{error}</div>
         </IonList>
 
         <br></br>
         <h2 id="title">COUNTRY STATS</h2>
         <br></br>
         <IonItem> 
-          <IonLabel className="ion-text-center ion-margin-top ion-margin-bottom">Select a country</IonLabel>
+          <IonLabel className="ion-text-center ion-margin-top ion-margin-bottom">Country</IonLabel>
           <IonSelect  onIonChange={()=>handleSelect("https://api.covid19api.com/summary")}>
             <FetchCountries url="https://api.covid19api.com/summary"></FetchCountries>
           </IonSelect>
@@ -222,7 +219,7 @@ const updateData = async (url:RequestInfo)=>{ // in this function we fetch the s
 
         </IonSlides>
         <IonList className="ion-text-center">
-          <IonButton onClick={() => updateData('https://api.covid19api.com/summary')}>UPDATE DATA</IonButton>
+          <div style={{margin:'auto 0px',width:'80%'}}>{err}</div>
         </IonList>
         
       </IonContent>
